@@ -6,9 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>basic PHP syntax</title>
     <style>
+        html,
         body {
             margin: 0px;
             padding: 0px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        body {
             background-color: black;
             color: #00FF00;
             font-family: monospace;
@@ -22,11 +29,16 @@
             font-weight: normal;
         }
 
-        #head {
+        header {
             margin-top: 10px;
             margin-right: 10px;
             display: flex;
             justify-content: flex-end;
+        }
+
+        main {
+            margin-bottom: 10px;
+            flex: 1;
         }
 
         .home,
@@ -49,12 +61,10 @@
         }
 
         footer {
-            bottom: 0px;
             width: 100%;
             background-color: #006400;
             color: #00FF00;
             text-align: center;
-            position: fixed;
         }
     </style>
     <script>
@@ -79,40 +89,44 @@
 </head>
 
 <body>
-    <div id="head">
+    <header>
         <button class="doc" onclick="goDoc()">doc</button>
         <button class="git" onclick="goGit()">git</button>
         <button class="home" onclick="goHome()">back</button>
-    </div>
-    <h1>basic PHP syntax</h1>
-    <h2>sergio lópez</h2>
-    <?php
-     echo "<p>sergio lópez</p>";
-     echo "<p>el código del script PHP siempre se incluye entre las etiquetas &lt;?php y ?&gt;</p>";
+    </header>
 
-     $entero = 10;
+    <main>
+        <h1>basic PHP syntax</h1>
+        <h2>sergio lópez</h2>
+        <?php
+            echo "<p>sergio lópez</p>";
+            echo "<p>el código del script PHP siempre se incluye entre las etiquetas &lt;?php y ?&gt;</p>";
 
-     $decimal = 8.22;
+            $entero = 10;
 
-     $booleano = true;
+            $decimal = 8.22;
 
-     $cadena = "cadena";
+            $booleano = true;
 
-     define("CONSTANTE", 3.14);
+            $cadena = "cadena";
 
-     echo "<p>variable entera: " . $entero . "</p>";
-     echo "<p>variable decimal: " . $decimal . "</p>";
-     echo "<p>variable booleana: " . ($booleano ? "verdadero" : "falso") . "</p>";
-     echo "<p>variable cadena: " . $cadena . "</p>";
-     echo "<p>constante: " . CONSTANTE . "</p>";
+            define("CONSTANTE", 3.14);
 
-     $suma = $entero + $decimal;
-     echo "<p>resultado de la suma: " . $suma . "</p>";
-    ?>
+            echo "<p>variable entera: " . $entero . "</p>";
+            echo "<p>variable decimal: " . $decimal . "</p>";
+            echo "<p>variable booleana: " . ($booleano ? "verdadero" : "falso") . "</p>";
+            echo "<p>variable cadena: " . $cadena . "</p>";
+            echo "<p>constante: " . CONSTANTE . "</p>";
+
+            $suma = $entero + $decimal;
+            echo "<p>resultado de la suma: " . $suma . "</p>";
+        ?>
+    </main>
+
+    <footer>
+        <h3>desarrollo web entorno servidor</h3>
+    </footer>
+
 </body>
-
-<footer>
-    <h3>desarrollo web entorno servidor</h3>
-</footer>
 
 </html>
